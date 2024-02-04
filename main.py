@@ -43,8 +43,6 @@ def save_inputs(window, inputs):
 
     is_inputs_ok = True
     new_parameters = []
-    # global is_error_shown
-    # error_text = tk.Label(window, text='Введите числовые параметры.', fg="#B91818", font=("Helvetica", "15"))
 
     for i, item in enumerate(inputs):
         item = item.get().replace(',', '.')
@@ -56,9 +54,6 @@ def save_inputs(window, inputs):
                 is_inputs_ok = False
         else:
             is_inputs_ok = False
-        #     if not is_error_shown:
-        #         error_text.pack()
-        #         is_error_shown = True
 
     if is_inputs_ok:
         window.destroy()
@@ -159,8 +154,6 @@ def show_more_info_window():
     fig = Figure(figsize=(5, 5), dpi=100)
     axes = fig.add_subplot(111)
 
-    # print(get_pos_before_zero(positions))
-    # y_graph_list = get_pos_before_zero(positions)
     print(parameters)
     y_graph_list = positions
     t_graph_list = [dt * i for i in range(len(positions))]
@@ -180,8 +173,6 @@ parameters_names = ['Высота падения [м]', 'Масса тела [к
                     'Коэффициент обтекаемости тела [Н*с2/(м*кг)]', 'Плотность среды [кг/м3]',
                     'Ускорение свободного падения [м/с2]']
 parameters = ['' for _ in range(len(parameters_names))]
-# parameters = [2.055, 0.06518, 0.057, 0.47, 1.18, 9.81]
-# parameters = [3.14, 0.00277, 0.011, 0.47, 1.29, 9.81]
 is_win_shown = False
 is_inputs_ok = True
 
